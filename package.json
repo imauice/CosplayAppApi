@@ -1,5 +1,5 @@
 {
-  "name": "rest-api-mongoose",
+  "name": "cos-app-api",
   "version": "1.0.0",
   "scripts": {
     "debug": "ts-node-dev --inspect -- src/index",
