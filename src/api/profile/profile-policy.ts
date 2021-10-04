@@ -8,6 +8,9 @@ entityPolicy(Profile)
     // where the ID is the same as current login user ID
     .register('ResourceOwner', async (ctx, id) => {
         const ProfileModel = model(Profile);
-        const user = await ProfileModel.findOne(id, { relations: ['profile'], cache: true });
-        return ctx.user?.userId === user?.id;
+        const user = await ProfileModel.findOne(id, {
+            relations: ['profile'],
+            cache: true,
+        });
+        return ctx.user?.userId === user?.owner?.id;
     });
