@@ -8,6 +8,16 @@
     "test": "jest --maxWorkers=4",
     "lint": "eslint . --ext .ts"
   },
+  "lint-staged": {
+    "src/**/*.{ts,json}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "@plumier/jwt": "^1.0.3",
     "@plumier/mongoose": "^1.0.4",
@@ -27,8 +37,12 @@
     "@typescript-eslint/eslint-plugin": "^4.32.0",
     "@typescript-eslint/parser": "^4.32.0",
     "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.2",
     "jest": "^27.0.6",
     "jwt-decode": "^3.1.2",
+    "lint-staged": "^11.2.0",
     "prettier": "^2.4.1",
     "supertest": "^6.1.3",
     "ts-jest": "^27.0.3",
