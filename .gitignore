@@ -3,3 +3,4 @@ coverage
 src/**/*.js
 .env
 !jest.config.js
+dist
